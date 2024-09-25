@@ -6,4 +6,4 @@ Learning objectives:
 - DOM manipulation
 - Creating clear functions
 - Creating a responsive design
-- Web application that can be usefull
+- Web application that can be useful
