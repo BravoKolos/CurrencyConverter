@@ -17,9 +17,23 @@ async function getExchangeRate(apiKey) {
 
 getExchangeRate(apiKey);
 
-codesArray.array.forEach((currency) => {
-    const option = document.createElement("option")
-    option.value = currency;
-    option.text = currency;
-    fromCurrDropDown.addEventListener(option);
-});
+function populateDropdown(dropdown, codesArray) {
+    codesArray.forEach((currency) => {
+        const option = document.createElement("option");
+        option.value = currency;
+        option.text = currency;
+        dropdown.appendChild(option);
+    });
+}
+
+async function initializeDropdowns() {
+    const data = await getExchangeRate(apiKey);
+    if (data && data.conversion_rates) {
+        const codesArray = Object.keys(data.conversion_rates);
+      
+        populateDropdown(fromCurrDropDown, codesArray);
+        populateDropdown(toCurrDropDown, codesArray);
+    }
+}
+
+initializeDropdowns();
