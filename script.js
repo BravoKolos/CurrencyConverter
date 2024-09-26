@@ -1,4 +1,5 @@
-const apiKey = "76ceb0f77ed70a37d5b6c401";
+const fromCurrDropDown = document.querySelector(".fromCurrSelect")
+const toCurrDropDown = document.querySelector(".toCurrSelect")
 
 async function getExchangeRate(apiKey) {
     try {
@@ -15,3 +16,10 @@ async function getExchangeRate(apiKey) {
 }
 
 getExchangeRate(apiKey);
+
+codesArray.array.forEach((currency) => {
+    const option = document.createElement("option")
+    option.value = currency;
+    option.text = currency;
+    fromCurrDropDown.addEventListener(option);
+});
