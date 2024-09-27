@@ -3,11 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
 
 body {
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -21,23 +20,47 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
     text-align: center;
-    width: 100%;
-    max-width: 400px;
+    width: auto;
+    max-width: 100%;
     margin: 20px;
+    display: inline-block;
 }
 
 .container {
-   display: flex;
-   padding: 0;
-   border: none;
-   background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
-.switchCurrency {
-    margin: auto;
+input.amountInput, select.fromCurrSelect, select.toCurrSelect, button.switchCurrency, button.convertOpt {
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
 }
 
-img {
+button.convertOpt {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #7fd882;
+    color: white; 
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3ac041;
+}
+
+.switchCurrency img {
     height: 30px;
     width: 30px;
 }
+
