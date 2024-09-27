@@ -42,5 +42,5 @@ initializeDropdowns();
 const exchangeRate = () => {
     console.log("You pressed the button");
 }
-convertButton.addEventListener("keypress", exchangeRate);
+document.addEventListener("keypress", exchangeRate);
 convertButton.addEventListener("click", exchangeRate);
