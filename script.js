@@ -1,9 +1,10 @@
 const fromCurrDropDown = document.querySelector(".fromCurrSelect")
 const toCurrDropDown = document.querySelector(".toCurrSelect")
+const convertButton = document.querySelector(".convertOpt");
 
 async function getExchangeRate(apiKey) {
     try {
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`);
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/PLN`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -37,3 +38,9 @@ async function initializeDropdowns() {
 }
 
 initializeDropdowns();
+
+const exchangeRate = () => {
+    console.log("You pressed the button");
+}
+convertButton.addEventListener("keypress", exchangeRate);
+convertButton.addEventListener("click", exchangeRate);
