@@ -2,6 +2,7 @@ const fromCurrDropDown = document.querySelector(".fromCurrSelect");
 const toCurrDropDown = document.querySelector(".toCurrSelect");
 const convertButton = document.querySelector(".convertOpt");
 const inputAmount = document.querySelector(".amountInput");
+const cardElement = document.querySelector(".card")
 
 let exchangeRates = {};
 
@@ -57,7 +58,12 @@ function exchangeCurrency() {
     const convertedAmount = (amount / fromRate) * toRate;
 
     console.log(`Converted amount: ${convertedAmount.toFixed(2)} ${toCurrency}`);
-    alert(`Converted amount: ${convertedAmount.toFixed(2)} ${toCurrency}`);
+   
+    const result = document.createElement("p");
+    const resultText = document.createTextNode(`Converted amount: ${convertedAmount.toFixed(2)} ${toCurrency}`)
+    result.appendChild(resultText);
+    cardElement.appendChild(result)
+    
 }
 
 document.addEventListener("keydown", (event) => {
