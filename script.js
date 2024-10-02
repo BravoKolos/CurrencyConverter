@@ -3,6 +3,7 @@ const toCurrDropDown = document.querySelector(".toCurrSelect");
 const convertButton = document.querySelector(".convertOpt");
 const inputAmount = document.querySelector(".amountInput");
 const cardElement = document.querySelector(".card")
+const switchArrows = document.querySelector(".rotateSwitchArrows");
 
 let exchangeRates = {};
 
@@ -71,5 +72,10 @@ document.addEventListener("keydown", (event) => {
         exchangeCurrency();
     }
 });
-
 convertButton.addEventListener("click", exchangeCurrency);
+
+
+function rotateArrows() {
+    switchArrows.classList.toggle("rotate");
+}
+switchArrows.addEventListener("click", rotateArrows);
