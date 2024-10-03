@@ -61,11 +61,16 @@ function exchangeCurrency() {
     console.log(`Converted amount: ${convertedAmount.toFixed(2)} ${toCurrency}`);
    
     const result = document.createElement("p");
-    const resultText = document.createTextNode(`Converted amount: ${convertedAmount.toFixed(2)} ${toCurrency}`)
+    const resultText = document.createTextNode(`${convertedAmount.toFixed(2)} ${toCurrency}`)
     result.appendChild(resultText);
+    result.classList.add('result');
     cardElement.appendChild(result)
     
+    setTimeout(() => {
+        result.classList.add('show');
+    }, 10);
 }
+
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {

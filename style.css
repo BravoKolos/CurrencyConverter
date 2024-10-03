@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Tahoma, sans-serif;
 }
 
 body {
@@ -19,11 +19,11 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    text-align: center;
     width: auto;
     max-width: 100%;
     margin: 20px;
     display: inline-block;
+    position: relative;
 }
 
 .container {
@@ -61,6 +61,7 @@ button:hover {
 
 .switchCurrency img {
     padding-top: 2px;
+    padding-bottom: 2px;
     height: 30px;
     width: 30px;
     transition: transform 0.5s ease;
@@ -69,24 +70,28 @@ button:hover {
 .rotate {
     transform: rotate(180deg);
 }
+
 p {
-    padding: 15px;
+    padding: 20px;
     font-size: 2rem;
-    letter-spacing: 5px;
-    border-right: 5px solid;
     width: 100%;
     white-space: nowrap;
-    overflow: hidden;
-    animation: 
-        typing 2s steps(15),
-        cursor.4s step-end infinite alternate;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    color: #3ac041;
 }
 
-@keyframes cursor {
-    50% {border-color: transparent;}
+.result {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    font-weight: 800;
 }
 
-@keyframes typing {
-    from {width: 0;}
+.result.show {
+    opacity: 1;
+    transform: translateY(0);
 }
+
 
