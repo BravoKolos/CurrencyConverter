@@ -76,20 +76,18 @@ p {
     font-size: 2rem;
     width: 100%;
     white-space: nowrap;
-    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-in, transform 0.5s ease-in;
     color: #3ac041;
 }
 
-.result {
-    opacity: 0;
+.result, .alert {
     transform: translateY(20px);
     transition: opacity 0.5s ease-in, transform 0.5s ease-in;
     font-weight: 800;
 }
 
-.result.show {
+.result.show, .alert.show {
     opacity: 1;
     transform: translateY(0);
 }

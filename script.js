@@ -48,9 +48,26 @@ function exchangeCurrency() {
     const fromCurrency = fromCurrDropDown.value;
     const toCurrency = toCurrDropDown.value;
 
+    let existingAlert = document.querySelector('.alert');
+    
     if (isNaN(amount)) {
-        alert("Please enter a valid amount.");
+        if (!existingAlert) {
+            const alert = document.createElement("p");
+            const alertText = document.createTextNode("Please enter a valid amount");
+            alert.appendChild(alertText);
+            alert.classList.add('alert');
+            cardElement.appendChild(alert);
+
+            setTimeout(() => {
+                alert.classList.add('show');
+            }, 10);
+    
+        
+        }
         return;
+    }
+    if (existingAlert) {
+        existingAlert.remove();
     }
 
     const fromRate = exchangeRates[fromCurrency];
