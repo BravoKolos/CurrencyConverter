@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Tahoma, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -14,35 +14,45 @@ body {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.425);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
     width: auto;
-    max-width: 100%;
+    max-width: 400px;
     margin: 20px;
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
+    flex-direction: column;
+    gap: 15px;
     padding: 0;
     border: none;
     background: none;
 }
 
-input.amountInput, select.fromCurrSelect, select.toCurrSelect, button.switchCurrency, button.convertOpt {
-    height: 40px;
-    margin: 0;
-    padding: 0 10px;
+input.amountInput, select.fromCurrSelect, select.toCurrSelect {
+    height: 45px;
+    padding: 0 15px;
     border-radius: 5px;
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
+    transition: border 0.3s;
+}
+
+input.amountInput:focus, select.fromCurrSelect:focus, select.toCurrSelect:focus {
+    border-color: #7fd882;
+    outline: none;
+}
+
+button.switchCurrency {
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 button.convertOpt {
@@ -51,19 +61,19 @@ button.convertOpt {
     cursor: pointer;
     background-color: #7fd882;
     color: white; 
-    padding: 10px;
-    transition: background-color 0.3s;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
+button.convertOpt:hover {
     background-color: #3ac041;
+    transform: scale(1.05);
 }
 
 .switchCurrency img {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     transition: transform 0.5s ease;
 }
 
@@ -72,13 +82,14 @@ button:hover {
 }
 
 p {
-    padding: 20px;
-    font-size: 2rem;
+    padding: 10px;
+    font-size: 1.5rem; 
     width: 100%;
-    white-space: nowrap;
+    text-align: center;
+    color: #3ac041;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-    color: #3ac041;
 }
 
 .result, .alert {
@@ -91,5 +102,3 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
-
-
