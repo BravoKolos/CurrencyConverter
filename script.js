@@ -101,3 +101,31 @@ function rotateArrows() {
     switchArrows.classList.toggle("rotate");
 }
 switchArrows.addEventListener("click", rotateArrows);
+
+// function to exchange currency after switching using arrows
+
+function exchangeCurrAfterSwitch() {
+    const amount = parseFloat(inputAmount.value); 
+    const fromCurrency = fromCurrDropDown.value;
+    const toCurrency = toCurrDropDown.value;
+
+    const fromRate = exchangeRates[fromCurrency];
+    const toRate = exchangeRates[toCurrency];
+
+    const convertedAmount = (amount / toRate) * fromRate;
+
+    console.log(`Converted amount: ${convertedAmount.toFixed(2)} ${fromCurrency}`);
+
+    const result = document.createElement("p");
+    const resultText = document.createTextNode(`${convertedAmount.toFixed(2)} ${fromCurrency}`)
+    result.appendChild(resultText);
+    result.classList.add('result');
+    cardElement.appendChild(result)
+    
+    setTimeout(() => {
+        result.classList.add('show');
+    }, 10);
+    
+}
+
+switchArrows.addEventListener('click', exchangeCurrAfterSwitch)
