@@ -85,7 +85,7 @@ h1:hover {
 input.amountInput, select.fromCurrSelect, select.toCurrSelect {
     height: 45px;
     padding: 0 15px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 1px solid #ccc;
     transition: border 0.3s;
 }
@@ -108,7 +108,7 @@ button.convertOpt {
     background-color: #7fd882;
     color: white; 
     padding: 12px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: background-color 0.3s, transform 0.3s;
 }
 

@@ -104,8 +104,10 @@ switchArrows.addEventListener("click", rotateArrows);
 
 // function to exchange currency after switching using arrows
 
-function exchangeCurrAfterSwitch() {
-    const amount = parseFloat(inputAmount.value); 
+
+
+switchArrows.addEventListener('click', () => {
+     const amount = parseFloat(inputAmount.value); 
     const fromCurrency = fromCurrDropDown.value;
     const toCurrency = toCurrDropDown.value;
 
@@ -125,7 +127,4 @@ function exchangeCurrAfterSwitch() {
     setTimeout(() => {
         result.classList.add('show');
     }, 10);
-    
-}
-
-switchArrows.addEventListener('click', exchangeCurrAfterSwitch)
+})
